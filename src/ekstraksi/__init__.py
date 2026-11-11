@@ -4,8 +4,11 @@ Baca setiap berkas di data/raw/ (CSV, JSON WebAPI BPS, XLSX BNPB, SDMX ILO, JSON
 DataFrame mentah yang setia pada sumbernya: jangan membersihkan di sini, cukup ratakan struktur
 dan catat asal tiap baris (`_berkas_raw` relatif data/raw/, `_sha256_raw` dari src.common.manifest).
 """
+import pandas as pd
+
+from src.ekstraksi import bps
 
 
 def jalankan():
     """Kembalikan {nama_sumber: DataFrame mentah}."""
-    raise NotImplementedError("Tahap 1: tulis pembaca untuk tiap format di data/raw/")
+    return {"bps": pd.concat(bps.baca_semua().values(), ignore_index=True)}
