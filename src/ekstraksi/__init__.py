@@ -6,9 +6,12 @@ dan catat asal tiap baris (`_berkas_raw` relatif data/raw/, `_sha256_raw` dari s
 """
 import pandas as pd
 
-from src.ekstraksi import bps
+from src.ekstraksi import bps, wdi
 
 
 def jalankan():
     """Kembalikan {nama_sumber: DataFrame mentah}."""
-    return {"bps": pd.concat(bps.baca_semua().values(), ignore_index=True)}
+    return {
+        "bps": pd.concat(bps.baca_semua().values(), ignore_index=True),
+        "wdi": pd.concat(wdi.baca_semua().values(), ignore_index=True),
+    }
