@@ -6,7 +6,7 @@ dan catat asal tiap baris (`_berkas_raw` relatif data/raw/, `_sha256_raw` dari s
 """
 import pandas as pd
 
-from src.ekstraksi import bps, wdi
+from src.ekstraksi import bps, ilostat, wdi
 
 
 def jalankan():
@@ -14,4 +14,5 @@ def jalankan():
     return {
         "bps": pd.concat(bps.baca_semua().values(), ignore_index=True),
         "wdi": pd.concat(wdi.baca_semua().values(), ignore_index=True),
+        "ilostat": pd.concat(ilostat.baca_semua().values(), ignore_index=True),
     }
