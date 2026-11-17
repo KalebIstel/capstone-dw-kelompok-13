@@ -1,0 +1,22 @@
+var_id,wilayah_id,wilayah,turvar_id,turvar,tahun_id,tahun,periode_id,periode,nilai,satuan,z_score,anomali_iqr,anomali_zscore,kandidat_anomali,seri
+1186,3400,DI YOGYAKARTA,0,Tidak ada,117,2017,0,Tahun,11.13,Persen,-2.3511767678468924,True,False,True,var1186
+1186,3400,DI YOGYAKARTA,0,Tidak ada,119,2019,0,Tahun,9.78,Persen,-2.6517041732220847,True,False,True,var1186
+1186,3400,DI YOGYAKARTA,0,Tidak ada,121,2021,0,Tahun,9.89,Persen,-2.627216755006328,True,False,True,var1186
+1186,3400,DI YOGYAKARTA,0,Tidak ada,122,2022,0,Tahun,10.7,Persen,-2.446900311781213,True,False,True,var1186
+1186,3400,DI YOGYAKARTA,0,Tidak ada,123,2023,0,Tahun,10.89,Persen,-2.4046038621358155,True,False,True,var1186
+1186,3400,DI YOGYAKARTA,0,Tidak ada,124,2024,0,Tahun,11.18,Persen,-2.3400461232033667,True,False,True,var1186
+1186,3400,DI YOGYAKARTA,0,Tidak ada,125,2025,0,Tahun,11.25,Persen,-2.3244632207024307,True,False,True,var1186
+1186,5100,BALI,0,Tidak ada,117,2017,0,Tahun,9.31,Persen,-2.7563322328712254,True,False,True,var1186
+1186,5100,BALI,0,Tidak ada,118,2018,0,Tahun,8.59,Persen,-2.9166135157379944,True,False,True,var1186
+1186,5100,BALI,0,Tidak ada,119,2019,0,Tahun,9.4,Persen,-2.7362970725128792,True,False,True,var1186
+1186,5100,BALI,0,Tidak ada,122,2022,0,Tahun,11.32,Persen,-2.308880318201495,True,False,True,var1186
+1186,5100,BALI,0,Tidak ada,123,2023,0,Tahun,10.03,Persen,-2.5960509500044564,True,False,True,var1186
+1186,5100,BALI,0,Tidak ada,124,2024,0,Tahun,7.26,Persen,-3.2126886632557765,True,True,True,var1186
+1186,5100,BALI,0,Tidak ada,125,2025,0,Tahun,5.33,Persen,-3.642331546495866,True,True,True,var1186
+1186,7100,SULAWESI UTARA,0,Tidak ada,122,2022,0,Tahun,33.54,Persen,2.6375781613812954,True,False,True,var1186
+1186,8100,MALUKU,0,Tidak ada,123,2023,0,Tahun,35.38,Persen,3.0471858842630395,True,True,True,var1186
+1186,9700,PAPUA PEGUNUNGAN,0,Tidak ada,125,2025,0,Tahun,11.62,Persen,-2.2420964503403416,True,False,True,var1186
+2658,5300,NUSA TENGGARA TIMUR,0,Tidak ada,124,2024,0,Tahun,5.18,Persen,2.800823673679343,True,False,True,var2658
+2658,7400,SULAWESI TENGGARA,0,Tidak ada,120,2020,0,Tahun,6.16,Persen,3.709948656784715,True,True,True,var2658
+2658,7400,SULAWESI TENGGARA,0,Tidak ada,124,2024,0,Tahun,5.12,Persen,2.7451629604279937,True,False,True,var2658
+2658,9600,PAPUA TENGAH,0,Tidak ada,125,2025,0,Tahun,5.43,Persen,3.0327433122266316,True,True,True,var2658
