@@ -1,0 +1,30 @@
+seri,tahun,wilayah,nilai,z_score,anomali_iqr_gabungan,anomali_iqr_tahunan,anomali_zscore,metode_deteksi
+var1186,2017,BALI,9.31,-2.7563322328712254,True,True,False,IQR gabungan; IQR tahunan
+var1186,2017,DI YOGYAKARTA,11.13,-2.3511767678468924,True,True,False,IQR gabungan; IQR tahunan
+var1186,2017,SULAWESI UTARA,29.78,,False,True,False,IQR tahunan
+var1186,2018,BALI,8.59,-2.9166135157379944,True,True,False,IQR gabungan; IQR tahunan
+var1186,2018,DI YOGYAKARTA,12.52,,False,True,False,IQR tahunan
+var1186,2018,SULAWESI UTARA,29.73,,False,True,False,IQR tahunan
+var1186,2019,BALI,9.4,-2.7362970725128792,True,True,False,IQR gabungan; IQR tahunan
+var1186,2019,DI YOGYAKARTA,9.78,-2.6517041732220847,True,True,False,IQR gabungan; IQR tahunan
+var1186,2019,DKI JAKARTA,15.41,,False,True,False,IQR tahunan
+var1186,2019,SULAWESI UTARA,28.1,,False,True,False,IQR tahunan
+var1186,2020,BALI,14.9,,False,True,False,IQR tahunan
+var1186,2020,DI YOGYAKARTA,12.71,,False,True,False,IQR tahunan
+var1186,2021,DI YOGYAKARTA,9.89,-2.627216755006328,True,True,False,IQR gabungan; IQR tahunan
+var1186,2022,BALI,11.32,-2.308880318201495,True,True,False,IQR gabungan; IQR tahunan
+var1186,2022,DI YOGYAKARTA,10.7,-2.446900311781213,True,True,False,IQR gabungan; IQR tahunan
+var1186,2022,SULAWESI UTARA,33.54,2.6375781613812954,True,False,False,IQR gabungan
+var1186,2023,BALI,10.03,-2.5960509500044564,True,True,False,IQR gabungan; IQR tahunan
+var1186,2023,DI YOGYAKARTA,10.89,-2.4046038621358155,True,True,False,IQR gabungan; IQR tahunan
+var1186,2023,MALUKU,35.38,3.0471858842630395,True,True,True,IQR gabungan; IQR tahunan; Z-score
+var1186,2024,BALI,7.26,-3.2126886632557765,True,True,True,IQR gabungan; IQR tahunan; Z-score
+var1186,2024,DI YOGYAKARTA,11.18,-2.3400461232033667,True,False,False,IQR gabungan
+var1186,2025,BALI,5.33,-3.642331546495866,True,True,True,IQR gabungan; IQR tahunan; Z-score
+var1186,2025,DI YOGYAKARTA,11.25,-2.3244632207024307,True,False,False,IQR gabungan
+var1186,2025,PAPUA PEGUNUNGAN,11.62,-2.2420964503403416,True,False,False,IQR gabungan
+var2658,2020,SULAWESI TENGGARA,6.16,3.709948656784715,True,True,True,IQR gabungan; IQR tahunan; Z-score
+var2658,2024,NUSA TENGGARA TIMUR,5.18,2.800823673679343,True,False,False,IQR gabungan
+var2658,2024,SULAWESI TENGGARA,5.12,2.7451629604279937,True,False,False,IQR gabungan
+var2658,2025,NUSA TENGGARA TIMUR,4.74,,False,True,False,IQR tahunan
+var2658,2025,PAPUA TENGAH,5.43,3.0327433122266316,True,True,True,IQR gabungan; IQR tahunan; Z-score
