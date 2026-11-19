@@ -1,0 +1,30 @@
+seri,tahun,wilayah,nilai,nilai_tahun_sebelumnya,arah_wilayah,arah_serentak,pct_searah,rasio_median_wilayah,kategori,alasan,nilai_diubah
+var1186,2017,BALI,9.31,13.56,turun,tidak serentak,76.47,0.928,outlier_asli,"hanya 76% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 8 kali",tidak
+var1186,2017,DI YOGYAKARTA,11.13,14.24,turun,tidak serentak,76.47,0.996,outlier_asli,"hanya 76% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 9 kali",tidak
+var1186,2017,SULAWESI UTARA,29.78,27.27,naik,tidak serentak,23.53,1.009,outlier_asli,"hanya 24% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 4 kali",tidak
+var1186,2018,BALI,8.59,9.31,turun,tidak serentak,20.59,0.856,outlier_asli,"hanya 21% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 8 kali",tidak
+var1186,2018,DI YOGYAKARTA,12.52,11.13,naik,tidak serentak,79.41,1.12,outlier_asli,"hanya 79% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 9 kali",tidak
+var1186,2018,SULAWESI UTARA,29.73,29.78,turun,tidak serentak,20.59,1.007,outlier_asli,"hanya 21% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 4 kali",tidak
+var1186,2019,BALI,9.4,8.59,naik,tidak serentak,47.06,0.937,outlier_asli,"hanya 47% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 8 kali",tidak
+var1186,2019,DI YOGYAKARTA,9.78,12.52,turun,tidak serentak,52.94,0.875,outlier_asli,"hanya 53% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 9 kali",tidak
+var1186,2019,DKI JAKARTA,15.41,16.98,turun,tidak serentak,52.94,0.995,outlier_asli,"hanya 53% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 1 kali",tidak
+var1186,2019,SULAWESI UTARA,28.1,29.73,turun,tidak serentak,52.94,0.952,outlier_asli,"hanya 53% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 4 kali",tidak
+var1186,2020,BALI,14.9,9.4,naik,naik,88.24,1.486,patahan_diduga,"88% wilayah bergerak naik pada 2020, searah dengan kandidat; metadata BPS tidak mengonfirmasi perubahan definisi, bisa juga kejadian riil",tidak
+var1186,2020,DI YOGYAKARTA,12.71,9.78,naik,naik,88.24,1.137,patahan_diduga,"88% wilayah bergerak naik pada 2020, searah dengan kandidat; metadata BPS tidak mengonfirmasi perubahan definisi, bisa juga kejadian riil",tidak
+var1186,2021,DI YOGYAKARTA,9.89,12.71,turun,turun,82.35,0.885,patahan_diduga,"82% wilayah bergerak turun pada 2021, searah dengan kandidat; metadata BPS tidak mengonfirmasi perubahan definisi, bisa juga kejadian riil",tidak
+var1186,2022,BALI,11.32,14.52,turun,tidak serentak,29.41,1.129,outlier_asli,"hanya 29% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 8 kali",tidak
+var1186,2022,DI YOGYAKARTA,10.7,9.89,naik,tidak serentak,70.59,0.957,outlier_asli,"hanya 71% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 9 kali",tidak
+var1186,2022,SULAWESI UTARA,33.54,29.43,naik,tidak serentak,70.59,1.136,outlier_asli,"hanya 71% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 4 kali",tidak
+var1186,2023,BALI,10.03,11.32,turun,tidak serentak,70.59,1.0,outlier_asli,"hanya 71% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 8 kali",tidak
+var1186,2023,DI YOGYAKARTA,10.89,10.7,naik,tidak serentak,29.41,0.974,outlier_asli,"hanya 29% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 9 kali",tidak
+var1186,2023,MALUKU,35.38,30.89,naik,tidak serentak,29.41,1.288,outlier_asli,"hanya 29% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 1 kali",tidak
+var1186,2024,BALI,7.26,10.03,turun,turun,88.24,0.724,patahan_diduga,"88% wilayah bergerak turun pada 2024, searah dengan kandidat; metadata BPS tidak mengonfirmasi perubahan definisi, bisa juga kejadian riil",tidak
+var1186,2024,DI YOGYAKARTA,11.18,10.89,naik,turun,11.76,1.0,outlier_asli,gerak kandidat (naik) berlawanan dengan arah serentak (turun); wilayah ini kandidat 9 kali,tidak
+var1186,2025,BALI,5.33,7.26,turun,tidak serentak,76.32,0.531,outlier_asli,"hanya 76% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 8 kali",tidak
+var1186,2025,DI YOGYAKARTA,11.25,11.18,naik,tidak serentak,23.68,1.006,outlier_asli,"hanya 24% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 9 kali",tidak
+var1186,2025,PAPUA PEGUNUNGAN,11.62,17.74,turun,tidak serentak,76.32,0.792,outlier_asli,"hanya 76% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 1 kali",tidak
+var2658,2020,SULAWESI TENGGARA,6.16,,,tidak ada,,1.465,outlier_asli,"tahun pertama wilayah, tidak ada pembanding; wilayah ini kandidat 2 kali",tidak
+var2658,2024,NUSA TENGGARA TIMUR,5.18,3.57,naik,naik,81.25,1.327,patahan_diduga,"81% wilayah bergerak naik pada 2024, searah dengan kandidat; metadata BPS tidak mengonfirmasi perubahan definisi, bisa juga kejadian riil",tidak
+var2658,2024,SULAWESI TENGGARA,5.12,2.83,naik,naik,81.25,1.218,patahan_diduga,"81% wilayah bergerak naik pada 2024, searah dengan kandidat; metadata BPS tidak mengonfirmasi perubahan definisi, bisa juga kejadian riil",tidak
+var2658,2025,NUSA TENGGARA TIMUR,4.74,5.18,turun,tidak serentak,73.53,1.214,outlier_asli,"hanya 74% wilayah bergerak turun, tidak serentak; wilayah ini kandidat 2 kali",tidak
+var2658,2025,PAPUA TENGAH,5.43,2.25,naik,tidak serentak,26.47,1.414,outlier_asli,"hanya 26% wilayah bergerak naik, tidak serentak; wilayah ini kandidat 1 kali",tidak
