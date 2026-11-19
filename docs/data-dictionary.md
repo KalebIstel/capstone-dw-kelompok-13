@@ -27,3 +27,72 @@ Total baris: 1.325 baris | Kunci komposit: `[sumber, seri_kode, wilayah_kode, pe
 
 | Kolom | Tipe | Satuan/format | Boleh kosong | Rentang atau nilai sah | Asal (berkas/aturan) | Keterangan |
 |---|---|---|---|---|---|---|
+
+## Laporan grid panel dan kelengkapan provinsi
+
+Bagian ini mendokumentasikan laporan analisis panel untuk dua seri BPS pada kasus 13. Laporan disimpan sebagai CSV di folder `reports/`, bukan sebagai tabel Gold.
+
+### Sumber dan cakupan
+
+| Seri | Indikator | Berkas sumber | Rentang tahun |
+|---|---|---|---|
+| `var1186` | NEET | `sdg8_neet.csv` | 2015–2025 |
+| `var2658` | Pekerja anak | `sdg8_8_7_1_v2658.csv` | 2020–2025 |
+
+### Aturan pembentukan grid
+
+1. Baris nasional dengan `wilayah` bernilai `INDONESIA` dipisahkan dan tidak dimasukkan ke panel provinsi.
+2. Grid dibentuk dari kombinasi setiap tahun pengamatan pada masing-masing seri dengan daftar acuan 38 provinsi.
+3. Empat provinsi baru di Papua yang diperiksa dalam aturan ini adalah `PAPUA BARAT DAYA`, `PAPUA PEGUNUNGAN`, `PAPUA SELATAN`, dan `PAPUA TENGAH`.
+4. Untuk keperluan analisis panel, empat provinsi tersebut diberi status `belum_terbentuk` sebelum 2022, `masa_transisi` pada 2022, dan `eligible` mulai 2023. Ini adalah asumsi operasional yang dicatat pada K-002, bukan pernyataan bahwa data pengamatan tersedia pada tahun pembentukan administratifnya.
+5. Provinsi lain berstatus `eligible` pada seluruh tahun dalam rentang seri.
+6. Baris berstatus `eligible` yang tidak memiliki nilai pengamatan diberi `status_data=missing`. Baris dengan nilai diberi `status_data=tersedia`.
+7. Status `belum_terbentuk` dan `masa_transisi` tidak dihitung sebagai missing dan tidak masuk penyebut perhitungan persentase kelengkapan.
+8. Persentase terisi dihitung sebagai `jumlah_terisi / jumlah_provinsi_eligible * 100`.
+
+### Struktur berkas laporan
+
+#### `reports/grid_panel_var1186.csv` dan `reports/grid_panel_var2658.csv`
+
+Satu baris merepresentasikan satu kombinasi seri, tahun, dan provinsi dalam grid.
+
+| Kolom | Tipe/format | Keterangan |
+|---|---|---|
+| `seri` | string | Kode seri, yaitu `var1186` atau `var2658` |
+| `tahun` | integer | Tahun pengamatan |
+| `wilayah` | string | Nama provinsi |
+| `nilai` | numerik | Nilai indikator dari data sumber; kosong jika tidak tersedia pada kombinasi tahun-provinsi |
+| `status_wilayah` | kategori | `eligible`, `belum_terbentuk`, atau `masa_transisi` |
+| `status_data` | kategori | `tersedia`, `missing`, `belum_terbentuk`, atau `masa_transisi` |
+
+#### `reports/kelengkapan_panel_per_tahun.csv`
+
+Satu baris merepresentasikan satu seri pada satu tahun pengamatan.
+
+| Kolom | Tipe/format | Keterangan |
+|---|---|---|
+| `seri` | string | Kode seri indikator |
+| `tahun` | integer | Tahun pengamatan |
+| `jumlah_provinsi_eligible` | integer | Jumlah provinsi yang masuk penyebut kelengkapan |
+| `jumlah_terisi` | integer | Jumlah provinsi eligible yang memiliki nilai |
+| `jumlah_missing` | integer | Jumlah provinsi eligible tanpa nilai |
+| `persen_terisi` | numerik, persen | Persentase provinsi eligible yang memiliki nilai, dibulatkan dua angka desimal |
+
+### Hasil pemeriksaan saat laporan dibuat
+
+| Seri | Tahun | Eligible | Terisi | Missing | Terisi (%) |
+|---|---:|---:|---:|---:|---:|
+| `var1186` | 2015–2022 | 34 per tahun | 34 per tahun | 0 per tahun | 100,00 |
+| `var1186` | 2023 | 38 | 34 | 4 | 89,47 |
+| `var1186` | 2024–2025 | 38 per tahun | 38 per tahun | 0 per tahun | 100,00 |
+| `var2658` | 2020–2022 | 34 per tahun | 34 per tahun | 0 per tahun | 100,00 |
+| `var2658` | 2023 | 38 | 34 | 4 | 89,47 |
+| `var2658` | 2024 | 38 | 36 | 2 | 94,74 |
+| `var2658` | 2025 | 38 | 34 | 4 | 89,47 |
+
+Angka pada tabel ini merupakan hasil pemeriksaan ketika laporan dibuat. Jalankan kembali `python buat_grid_panel.py` setelah data sumber berubah agar laporan diperbarui.
+
+### Skrip pembentuk laporan
+
+Skrip `buat_grid_panel.py` membentuk kedua grid panel dan ringkasan kelengkapan berdasarkan berkas sumber di `data/raw/bps/2026-10-17/`. Skrip memeriksa bahwa daftar acuan berisi 38 provinsi dan menggunakan validasi satu-ke-satu pada penggabungan data sumber ke grid.
+
