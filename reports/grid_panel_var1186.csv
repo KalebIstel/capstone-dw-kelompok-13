@@ -1,0 +1,419 @@
+seri,tahun,wilayah,nilai,status_wilayah,status_data
+var1186,2015,ACEH,25.65,eligible,tersedia
+var1186,2015,BALI,12.25,eligible,tersedia
+var1186,2015,BANTEN,29.45,eligible,tersedia
+var1186,2015,BENGKULU,19.7,eligible,tersedia
+var1186,2015,DI YOGYAKARTA,13.64,eligible,tersedia
+var1186,2015,DKI JAKARTA,15.91,eligible,tersedia
+var1186,2015,GORONTALO,27.16,eligible,tersedia
+var1186,2015,JAMBI,24.11,eligible,tersedia
+var1186,2015,JAWA BARAT,30.44,eligible,tersedia
+var1186,2015,JAWA TENGAH,25.39,eligible,tersedia
+var1186,2015,JAWA TIMUR,23.9,eligible,tersedia
+var1186,2015,KALIMANTAN BARAT,21.98,eligible,tersedia
+var1186,2015,KALIMANTAN SELATAN,24.03,eligible,tersedia
+var1186,2015,KALIMANTAN TENGAH,22.28,eligible,tersedia
+var1186,2015,KALIMANTAN TIMUR,22.25,eligible,tersedia
+var1186,2015,KALIMANTAN UTARA,19.24,eligible,tersedia
+var1186,2015,KEP. BANGKA BELITUNG,27.51,eligible,tersedia
+var1186,2015,KEP. RIAU,14.88,eligible,tersedia
+var1186,2015,LAMPUNG,28.26,eligible,tersedia
+var1186,2015,MALUKU,25.23,eligible,tersedia
+var1186,2015,MALUKU UTARA,25.22,eligible,tersedia
+var1186,2015,NUSA TENGGARA BARAT,25.55,eligible,tersedia
+var1186,2015,NUSA TENGGARA TIMUR,17.22,eligible,tersedia
+var1186,2015,PAPUA,15.42,eligible,tersedia
+var1186,2015,PAPUA BARAT,20.37,eligible,tersedia
+var1186,2015,PAPUA BARAT DAYA,,belum_terbentuk,belum_terbentuk
+var1186,2015,PAPUA PEGUNUNGAN,,belum_terbentuk,belum_terbentuk
+var1186,2015,PAPUA SELATAN,,belum_terbentuk,belum_terbentuk
+var1186,2015,PAPUA TENGAH,,belum_terbentuk,belum_terbentuk
+var1186,2015,RIAU,25.33,eligible,tersedia
+var1186,2015,SULAWESI BARAT,18.92,eligible,tersedia
+var1186,2015,SULAWESI SELATAN,24.1,eligible,tersedia
+var1186,2015,SULAWESI TENGAH,26.64,eligible,tersedia
+var1186,2015,SULAWESI TENGGARA,23.52,eligible,tersedia
+var1186,2015,SULAWESI UTARA,27.21,eligible,tersedia
+var1186,2015,SUMATERA BARAT,21.58,eligible,tersedia
+var1186,2015,SUMATERA SELATAN,25.78,eligible,tersedia
+var1186,2015,SUMATERA UTARA,22.01,eligible,tersedia
+var1186,2016,ACEH,23.35,eligible,tersedia
+var1186,2016,BALI,13.56,eligible,tersedia
+var1186,2016,BANTEN,27.73,eligible,tersedia
+var1186,2016,BENGKULU,19.91,eligible,tersedia
+var1186,2016,DI YOGYAKARTA,14.24,eligible,tersedia
+var1186,2016,DKI JAKARTA,14.09,eligible,tersedia
+var1186,2016,GORONTALO,22.69,eligible,tersedia
+var1186,2016,JAMBI,20.11,eligible,tersedia
+var1186,2016,JAWA BARAT,27.8,eligible,tersedia
+var1186,2016,JAWA TENGAH,23.52,eligible,tersedia
+var1186,2016,JAWA TIMUR,23.02,eligible,tersedia
+var1186,2016,KALIMANTAN BARAT,22.87,eligible,tersedia
+var1186,2016,KALIMANTAN SELATAN,23.82,eligible,tersedia
+var1186,2016,KALIMANTAN TENGAH,22.5,eligible,tersedia
+var1186,2016,KALIMANTAN TIMUR,27.04,eligible,tersedia
+var1186,2016,KALIMANTAN UTARA,18.45,eligible,tersedia
+var1186,2016,KEP. BANGKA BELITUNG,24.73,eligible,tersedia
+var1186,2016,KEP. RIAU,15.12,eligible,tersedia
+var1186,2016,LAMPUNG,25.4,eligible,tersedia
+var1186,2016,MALUKU,24.26,eligible,tersedia
+var1186,2016,MALUKU UTARA,24.26,eligible,tersedia
+var1186,2016,NUSA TENGGARA BARAT,19.53,eligible,tersedia
+var1186,2016,NUSA TENGGARA TIMUR,17.44,eligible,tersedia
+var1186,2016,PAPUA,16.53,eligible,tersedia
+var1186,2016,PAPUA BARAT,23.64,eligible,tersedia
+var1186,2016,PAPUA BARAT DAYA,,belum_terbentuk,belum_terbentuk
+var1186,2016,PAPUA PEGUNUNGAN,,belum_terbentuk,belum_terbentuk
+var1186,2016,PAPUA SELATAN,,belum_terbentuk,belum_terbentuk
+var1186,2016,PAPUA TENGAH,,belum_terbentuk,belum_terbentuk
+var1186,2016,RIAU,23.33,eligible,tersedia
+var1186,2016,SULAWESI BARAT,26.76,eligible,tersedia
+var1186,2016,SULAWESI SELATAN,22.21,eligible,tersedia
+var1186,2016,SULAWESI TENGAH,18.99,eligible,tersedia
+var1186,2016,SULAWESI TENGGARA,16.64,eligible,tersedia
+var1186,2016,SULAWESI UTARA,27.27,eligible,tersedia
+var1186,2016,SUMATERA BARAT,19.7,eligible,tersedia
+var1186,2016,SUMATERA SELATAN,23.43,eligible,tersedia
+var1186,2016,SUMATERA UTARA,21.87,eligible,tersedia
+var1186,2017,ACEH,22.41,eligible,tersedia
+var1186,2017,BALI,9.31,eligible,tersedia
+var1186,2017,BANTEN,25.84,eligible,tersedia
+var1186,2017,BENGKULU,19.85,eligible,tersedia
+var1186,2017,DI YOGYAKARTA,11.13,eligible,tersedia
+var1186,2017,DKI JAKARTA,13.49,eligible,tersedia
+var1186,2017,GORONTALO,25.76,eligible,tersedia
+var1186,2017,JAMBI,20.95,eligible,tersedia
+var1186,2017,JAWA BARAT,25.33,eligible,tersedia
+var1186,2017,JAWA TENGAH,21.0,eligible,tersedia
+var1186,2017,JAWA TIMUR,21.09,eligible,tersedia
+var1186,2017,KALIMANTAN BARAT,20.98,eligible,tersedia
+var1186,2017,KALIMANTAN SELATAN,21.51,eligible,tersedia
+var1186,2017,KALIMANTAN TENGAH,21.1,eligible,tersedia
+var1186,2017,KALIMANTAN TIMUR,20.47,eligible,tersedia
+var1186,2017,KALIMANTAN UTARA,16.35,eligible,tersedia
+var1186,2017,KEP. BANGKA BELITUNG,21.15,eligible,tersedia
+var1186,2017,KEP. RIAU,13.55,eligible,tersedia
+var1186,2017,LAMPUNG,23.91,eligible,tersedia
+var1186,2017,MALUKU,24.44,eligible,tersedia
+var1186,2017,MALUKU UTARA,24.44,eligible,tersedia
+var1186,2017,NUSA TENGGARA BARAT,21.6,eligible,tersedia
+var1186,2017,NUSA TENGGARA TIMUR,16.24,eligible,tersedia
+var1186,2017,PAPUA,16.35,eligible,tersedia
+var1186,2017,PAPUA BARAT,18.3,eligible,tersedia
+var1186,2017,PAPUA BARAT DAYA,,belum_terbentuk,belum_terbentuk
+var1186,2017,PAPUA PEGUNUNGAN,,belum_terbentuk,belum_terbentuk
+var1186,2017,PAPUA SELATAN,,belum_terbentuk,belum_terbentuk
+var1186,2017,PAPUA TENGAH,,belum_terbentuk,belum_terbentuk
+var1186,2017,RIAU,21.41,eligible,tersedia
+var1186,2017,SULAWESI BARAT,22.71,eligible,tersedia
+var1186,2017,SULAWESI SELATAN,21.83,eligible,tersedia
+var1186,2017,SULAWESI TENGAH,21.04,eligible,tersedia
+var1186,2017,SULAWESI TENGGARA,20.0,eligible,tersedia
+var1186,2017,SULAWESI UTARA,29.78,eligible,tersedia
+var1186,2017,SUMATERA BARAT,18.27,eligible,tersedia
+var1186,2017,SUMATERA SELATAN,22.35,eligible,tersedia
+var1186,2017,SUMATERA UTARA,18.88,eligible,tersedia
+var1186,2018,ACEH,22.77,eligible,tersedia
+var1186,2018,BALI,8.59,eligible,tersedia
+var1186,2018,BANTEN,24.65,eligible,tersedia
+var1186,2018,BENGKULU,20.77,eligible,tersedia
+var1186,2018,DI YOGYAKARTA,12.52,eligible,tersedia
+var1186,2018,DKI JAKARTA,16.98,eligible,tersedia
+var1186,2018,GORONTALO,26.37,eligible,tersedia
+var1186,2018,JAMBI,20.78,eligible,tersedia
+var1186,2018,JAWA BARAT,26.22,eligible,tersedia
+var1186,2018,JAWA TENGAH,21.23,eligible,tersedia
+var1186,2018,JAWA TIMUR,21.11,eligible,tersedia
+var1186,2018,KALIMANTAN BARAT,24.5,eligible,tersedia
+var1186,2018,KALIMANTAN SELATAN,23.06,eligible,tersedia
+var1186,2018,KALIMANTAN TENGAH,22.76,eligible,tersedia
+var1186,2018,KALIMANTAN TIMUR,23.24,eligible,tersedia
+var1186,2018,KALIMANTAN UTARA,17.37,eligible,tersedia
+var1186,2018,KEP. BANGKA BELITUNG,21.56,eligible,tersedia
+var1186,2018,KEP. RIAU,19.74,eligible,tersedia
+var1186,2018,LAMPUNG,23.42,eligible,tersedia
+var1186,2018,MALUKU,25.18,eligible,tersedia
+var1186,2018,MALUKU UTARA,23.04,eligible,tersedia
+var1186,2018,NUSA TENGGARA BARAT,24.95,eligible,tersedia
+var1186,2018,NUSA TENGGARA TIMUR,18.46,eligible,tersedia
+var1186,2018,PAPUA,16.74,eligible,tersedia
+var1186,2018,PAPUA BARAT,18.61,eligible,tersedia
+var1186,2018,PAPUA BARAT DAYA,,belum_terbentuk,belum_terbentuk
+var1186,2018,PAPUA PEGUNUNGAN,,belum_terbentuk,belum_terbentuk
+var1186,2018,PAPUA SELATAN,,belum_terbentuk,belum_terbentuk
+var1186,2018,PAPUA TENGAH,,belum_terbentuk,belum_terbentuk
+var1186,2018,RIAU,23.79,eligible,tersedia
+var1186,2018,SULAWESI BARAT,24.12,eligible,tersedia
+var1186,2018,SULAWESI SELATAN,23.07,eligible,tersedia
+var1186,2018,SULAWESI TENGAH,21.14,eligible,tersedia
+var1186,2018,SULAWESI TENGGARA,20.45,eligible,tersedia
+var1186,2018,SULAWESI UTARA,29.73,eligible,tersedia
+var1186,2018,SUMATERA BARAT,20.5,eligible,tersedia
+var1186,2018,SUMATERA SELATAN,23.35,eligible,tersedia
+var1186,2018,SUMATERA UTARA,18.46,eligible,tersedia
+var1186,2019,ACEH,23.61,eligible,tersedia
+var1186,2019,BALI,9.4,eligible,tersedia
+var1186,2019,BANTEN,23.11,eligible,tersedia
+var1186,2019,BENGKULU,20.51,eligible,tersedia
+var1186,2019,DI YOGYAKARTA,9.78,eligible,tersedia
+var1186,2019,DKI JAKARTA,15.41,eligible,tersedia
+var1186,2019,GORONTALO,26.41,eligible,tersedia
+var1186,2019,JAMBI,22.81,eligible,tersedia
+var1186,2019,JAWA BARAT,25.52,eligible,tersedia
+var1186,2019,JAWA TENGAH,21.8,eligible,tersedia
+var1186,2019,JAWA TIMUR,21.14,eligible,tersedia
+var1186,2019,KALIMANTAN BARAT,23.2,eligible,tersedia
+var1186,2019,KALIMANTAN SELATAN,22.18,eligible,tersedia
+var1186,2019,KALIMANTAN TENGAH,22.31,eligible,tersedia
+var1186,2019,KALIMANTAN TIMUR,19.65,eligible,tersedia
+var1186,2019,KALIMANTAN UTARA,21.42,eligible,tersedia
+var1186,2019,KEP. BANGKA BELITUNG,22.65,eligible,tersedia
+var1186,2019,KEP. RIAU,16.55,eligible,tersedia
+var1186,2019,LAMPUNG,22.84,eligible,tersedia
+var1186,2019,MALUKU,26.59,eligible,tersedia
+var1186,2019,MALUKU UTARA,24.94,eligible,tersedia
+var1186,2019,NUSA TENGGARA BARAT,21.98,eligible,tersedia
+var1186,2019,NUSA TENGGARA TIMUR,19.25,eligible,tersedia
+var1186,2019,PAPUA,17.57,eligible,tersedia
+var1186,2019,PAPUA BARAT,20.77,eligible,tersedia
+var1186,2019,PAPUA BARAT DAYA,,belum_terbentuk,belum_terbentuk
+var1186,2019,PAPUA PEGUNUNGAN,,belum_terbentuk,belum_terbentuk
+var1186,2019,PAPUA SELATAN,,belum_terbentuk,belum_terbentuk
+var1186,2019,PAPUA TENGAH,,belum_terbentuk,belum_terbentuk
+var1186,2019,RIAU,22.66,eligible,tersedia
+var1186,2019,SULAWESI BARAT,23.07,eligible,tersedia
+var1186,2019,SULAWESI SELATAN,21.91,eligible,tersedia
+var1186,2019,SULAWESI TENGAH,21.85,eligible,tersedia
+var1186,2019,SULAWESI TENGGARA,21.32,eligible,tersedia
+var1186,2019,SULAWESI UTARA,28.1,eligible,tersedia
+var1186,2019,SUMATERA BARAT,19.93,eligible,tersedia
+var1186,2019,SUMATERA SELATAN,22.78,eligible,tersedia
+var1186,2019,SUMATERA UTARA,18.71,eligible,tersedia
+var1186,2020,ACEH,23.6,eligible,tersedia
+var1186,2020,BALI,14.9,eligible,tersedia
+var1186,2020,BANTEN,27.5,eligible,tersedia
+var1186,2020,BENGKULU,20.63,eligible,tersedia
+var1186,2020,DI YOGYAKARTA,12.71,eligible,tersedia
+var1186,2020,DKI JAKARTA,20.13,eligible,tersedia
+var1186,2020,GORONTALO,27.35,eligible,tersedia
+var1186,2020,JAMBI,22.66,eligible,tersedia
+var1186,2020,JAWA BARAT,29.33,eligible,tersedia
+var1186,2020,JAWA TENGAH,24.01,eligible,tersedia
+var1186,2020,JAWA TIMUR,22.41,eligible,tersedia
+var1186,2020,KALIMANTAN BARAT,25.43,eligible,tersedia
+var1186,2020,KALIMANTAN SELATAN,21.16,eligible,tersedia
+var1186,2020,KALIMANTAN TENGAH,24.69,eligible,tersedia
+var1186,2020,KALIMANTAN TIMUR,24.25,eligible,tersedia
+var1186,2020,KALIMANTAN UTARA,22.59,eligible,tersedia
+var1186,2020,KEP. BANGKA BELITUNG,27.34,eligible,tersedia
+var1186,2020,KEP. RIAU,20.71,eligible,tersedia
+var1186,2020,LAMPUNG,23.35,eligible,tersedia
+var1186,2020,MALUKU,27.46,eligible,tersedia
+var1186,2020,MALUKU UTARA,26.37,eligible,tersedia
+var1186,2020,NUSA TENGGARA BARAT,22.24,eligible,tersedia
+var1186,2020,NUSA TENGGARA TIMUR,19.17,eligible,tersedia
+var1186,2020,PAPUA,20.92,eligible,tersedia
+var1186,2020,PAPUA BARAT,24.01,eligible,tersedia
+var1186,2020,PAPUA BARAT DAYA,,belum_terbentuk,belum_terbentuk
+var1186,2020,PAPUA PEGUNUNGAN,,belum_terbentuk,belum_terbentuk
+var1186,2020,PAPUA SELATAN,,belum_terbentuk,belum_terbentuk
+var1186,2020,PAPUA TENGAH,,belum_terbentuk,belum_terbentuk
+var1186,2020,RIAU,23.62,eligible,tersedia
+var1186,2020,SULAWESI BARAT,24.15,eligible,tersedia
+var1186,2020,SULAWESI SELATAN,25.48,eligible,tersedia
+var1186,2020,SULAWESI TENGAH,22.23,eligible,tersedia
+var1186,2020,SULAWESI TENGGARA,23.0,eligible,tersedia
+var1186,2020,SULAWESI UTARA,29.94,eligible,tersedia
+var1186,2020,SUMATERA BARAT,20.46,eligible,tersedia
+var1186,2020,SUMATERA SELATAN,25.55,eligible,tersedia
+var1186,2020,SUMATERA UTARA,22.87,eligible,tersedia
+var1186,2021,ACEH,24.38,eligible,tersedia
+var1186,2021,BALI,14.52,eligible,tersedia
+var1186,2021,BANTEN,26.52,eligible,tersedia
+var1186,2021,BENGKULU,22.75,eligible,tersedia
+var1186,2021,DI YOGYAKARTA,9.89,eligible,tersedia
+var1186,2021,DKI JAKARTA,20.47,eligible,tersedia
+var1186,2021,GORONTALO,25.79,eligible,tersedia
+var1186,2021,JAMBI,21.76,eligible,tersedia
+var1186,2021,JAWA BARAT,26.44,eligible,tersedia
+var1186,2021,JAWA TENGAH,20.32,eligible,tersedia
+var1186,2021,JAWA TIMUR,20.77,eligible,tersedia
+var1186,2021,KALIMANTAN BARAT,24.74,eligible,tersedia
+var1186,2021,KALIMANTAN SELATAN,20.54,eligible,tersedia
+var1186,2021,KALIMANTAN TENGAH,23.92,eligible,tersedia
+var1186,2021,KALIMANTAN TIMUR,21.56,eligible,tersedia
+var1186,2021,KALIMANTAN UTARA,19.8,eligible,tersedia
+var1186,2021,KEP. BANGKA BELITUNG,24.38,eligible,tersedia
+var1186,2021,KEP. RIAU,16.42,eligible,tersedia
+var1186,2021,LAMPUNG,22.09,eligible,tersedia
+var1186,2021,MALUKU,28.64,eligible,tersedia
+var1186,2021,MALUKU UTARA,27.59,eligible,tersedia
+var1186,2021,NUSA TENGGARA BARAT,20.78,eligible,tersedia
+var1186,2021,NUSA TENGGARA TIMUR,18.97,eligible,tersedia
+var1186,2021,PAPUA,18.51,eligible,tersedia
+var1186,2021,PAPUA BARAT,21.97,eligible,tersedia
+var1186,2021,PAPUA BARAT DAYA,,belum_terbentuk,belum_terbentuk
+var1186,2021,PAPUA PEGUNUNGAN,,belum_terbentuk,belum_terbentuk
+var1186,2021,PAPUA SELATAN,,belum_terbentuk,belum_terbentuk
+var1186,2021,PAPUA TENGAH,,belum_terbentuk,belum_terbentuk
+var1186,2021,RIAU,21.11,eligible,tersedia
+var1186,2021,SULAWESI BARAT,22.85,eligible,tersedia
+var1186,2021,SULAWESI SELATAN,23.78,eligible,tersedia
+var1186,2021,SULAWESI TENGAH,22.31,eligible,tersedia
+var1186,2021,SULAWESI TENGGARA,19.87,eligible,tersedia
+var1186,2021,SULAWESI UTARA,29.43,eligible,tersedia
+var1186,2021,SUMATERA BARAT,18.78,eligible,tersedia
+var1186,2021,SUMATERA SELATAN,25.38,eligible,tersedia
+var1186,2021,SUMATERA UTARA,20.29,eligible,tersedia
+var1186,2022,ACEH,28.99,eligible,tersedia
+var1186,2022,BALI,11.32,eligible,tersedia
+var1186,2022,BANTEN,27.29,eligible,tersedia
+var1186,2022,BENGKULU,22.49,eligible,tersedia
+var1186,2022,DI YOGYAKARTA,10.7,eligible,tersedia
+var1186,2022,DKI JAKARTA,17.19,eligible,tersedia
+var1186,2022,GORONTALO,28.03,eligible,tersedia
+var1186,2022,JAMBI,23.86,eligible,tersedia
+var1186,2022,JAWA BARAT,27.85,eligible,tersedia
+var1186,2022,JAWA TENGAH,20.44,eligible,tersedia
+var1186,2022,JAWA TIMUR,22.07,eligible,tersedia
+var1186,2022,KALIMANTAN BARAT,24.35,eligible,tersedia
+var1186,2022,KALIMANTAN SELATAN,23.57,eligible,tersedia
+var1186,2022,KALIMANTAN TENGAH,26.54,eligible,tersedia
+var1186,2022,KALIMANTAN TIMUR,20.08,eligible,tersedia
+var1186,2022,KALIMANTAN UTARA,20.3,eligible,tersedia
+var1186,2022,KEP. BANGKA BELITUNG,21.87,eligible,tersedia
+var1186,2022,KEP. RIAU,18.74,eligible,tersedia
+var1186,2022,LAMPUNG,22.63,eligible,tersedia
+var1186,2022,MALUKU,30.89,eligible,tersedia
+var1186,2022,MALUKU UTARA,29.52,eligible,tersedia
+var1186,2022,NUSA TENGGARA BARAT,23.3,eligible,tersedia
+var1186,2022,NUSA TENGGARA TIMUR,18.84,eligible,tersedia
+var1186,2022,PAPUA,20.07,eligible,tersedia
+var1186,2022,PAPUA BARAT,26.29,eligible,tersedia
+var1186,2022,PAPUA BARAT DAYA,,masa_transisi,masa_transisi
+var1186,2022,PAPUA PEGUNUNGAN,,masa_transisi,masa_transisi
+var1186,2022,PAPUA SELATAN,,masa_transisi,masa_transisi
+var1186,2022,PAPUA TENGAH,,masa_transisi,masa_transisi
+var1186,2022,RIAU,24.33,eligible,tersedia
+var1186,2022,SULAWESI BARAT,22.51,eligible,tersedia
+var1186,2022,SULAWESI SELATAN,22.61,eligible,tersedia
+var1186,2022,SULAWESI TENGAH,23.99,eligible,tersedia
+var1186,2022,SULAWESI TENGGARA,21.61,eligible,tersedia
+var1186,2022,SULAWESI UTARA,33.54,eligible,tersedia
+var1186,2022,SUMATERA BARAT,20.23,eligible,tersedia
+var1186,2022,SUMATERA SELATAN,25.32,eligible,tersedia
+var1186,2022,SUMATERA UTARA,20.71,eligible,tersedia
+var1186,2023,ACEH,29.02,eligible,tersedia
+var1186,2023,BALI,10.03,eligible,tersedia
+var1186,2023,BANTEN,28.8,eligible,tersedia
+var1186,2023,BENGKULU,21.77,eligible,tersedia
+var1186,2023,DI YOGYAKARTA,10.89,eligible,tersedia
+var1186,2023,DKI JAKARTA,15.49,eligible,tersedia
+var1186,2023,GORONTALO,24.87,eligible,tersedia
+var1186,2023,JAMBI,22.26,eligible,tersedia
+var1186,2023,JAWA BARAT,25.71,eligible,tersedia
+var1186,2023,JAWA TENGAH,20.99,eligible,tersedia
+var1186,2023,JAWA TIMUR,19.53,eligible,tersedia
+var1186,2023,KALIMANTAN BARAT,23.55,eligible,tersedia
+var1186,2023,KALIMANTAN SELATAN,21.17,eligible,tersedia
+var1186,2023,KALIMANTAN TENGAH,23.68,eligible,tersedia
+var1186,2023,KALIMANTAN TIMUR,18.66,eligible,tersedia
+var1186,2023,KALIMANTAN UTARA,18.16,eligible,tersedia
+var1186,2023,KEP. BANGKA BELITUNG,21.3,eligible,tersedia
+var1186,2023,KEP. RIAU,15.04,eligible,tersedia
+var1186,2023,LAMPUNG,22.32,eligible,tersedia
+var1186,2023,MALUKU,35.38,eligible,tersedia
+var1186,2023,MALUKU UTARA,29.71,eligible,tersedia
+var1186,2023,NUSA TENGGARA BARAT,20.45,eligible,tersedia
+var1186,2023,NUSA TENGGARA TIMUR,18.13,eligible,tersedia
+var1186,2023,PAPUA,25.06,eligible,tersedia
+var1186,2023,PAPUA BARAT,27.98,eligible,tersedia
+var1186,2023,PAPUA BARAT DAYA,,eligible,missing
+var1186,2023,PAPUA PEGUNUNGAN,,eligible,missing
+var1186,2023,PAPUA SELATAN,,eligible,missing
+var1186,2023,PAPUA TENGAH,,eligible,missing
+var1186,2023,RIAU,23.26,eligible,tersedia
+var1186,2023,SULAWESI BARAT,21.81,eligible,tersedia
+var1186,2023,SULAWESI SELATAN,22.24,eligible,tersedia
+var1186,2023,SULAWESI TENGAH,22.39,eligible,tersedia
+var1186,2023,SULAWESI TENGGARA,21.97,eligible,tersedia
+var1186,2023,SULAWESI UTARA,30.73,eligible,tersedia
+var1186,2023,SUMATERA BARAT,23.0,eligible,tersedia
+var1186,2023,SUMATERA SELATAN,23.37,eligible,tersedia
+var1186,2023,SUMATERA UTARA,20.08,eligible,tersedia
+var1186,2024,ACEH,28.56,eligible,tersedia
+var1186,2024,BALI,7.26,eligible,tersedia
+var1186,2024,BANTEN,23.79,eligible,tersedia
+var1186,2024,BENGKULU,20.92,eligible,tersedia
+var1186,2024,DI YOGYAKARTA,11.18,eligible,tersedia
+var1186,2024,DKI JAKARTA,15.19,eligible,tersedia
+var1186,2024,GORONTALO,21.89,eligible,tersedia
+var1186,2024,JAMBI,20.71,eligible,tersedia
+var1186,2024,JAWA BARAT,23.49,eligible,tersedia
+var1186,2024,JAWA TENGAH,17.93,eligible,tersedia
+var1186,2024,JAWA TIMUR,17.02,eligible,tersedia
+var1186,2024,KALIMANTAN BARAT,21.22,eligible,tersedia
+var1186,2024,KALIMANTAN SELATAN,18.69,eligible,tersedia
+var1186,2024,KALIMANTAN TENGAH,21.78,eligible,tersedia
+var1186,2024,KALIMANTAN TIMUR,19.35,eligible,tersedia
+var1186,2024,KALIMANTAN UTARA,16.87,eligible,tersedia
+var1186,2024,KEP. BANGKA BELITUNG,21.26,eligible,tersedia
+var1186,2024,KEP. RIAU,14.52,eligible,tersedia
+var1186,2024,LAMPUNG,22.53,eligible,tersedia
+var1186,2024,MALUKU,29.43,eligible,tersedia
+var1186,2024,MALUKU UTARA,27.85,eligible,tersedia
+var1186,2024,NUSA TENGGARA BARAT,15.44,eligible,tersedia
+var1186,2024,NUSA TENGGARA TIMUR,17.02,eligible,tersedia
+var1186,2024,PAPUA,27.85,eligible,tersedia
+var1186,2024,PAPUA BARAT,26.93,eligible,tersedia
+var1186,2024,PAPUA BARAT DAYA,25.04,eligible,tersedia
+var1186,2024,PAPUA PEGUNUNGAN,17.74,eligible,tersedia
+var1186,2024,PAPUA SELATAN,23.96,eligible,tersedia
+var1186,2024,PAPUA TENGAH,31.2,eligible,tersedia
+var1186,2024,RIAU,21.79,eligible,tersedia
+var1186,2024,SULAWESI BARAT,20.25,eligible,tersedia
+var1186,2024,SULAWESI SELATAN,21.65,eligible,tersedia
+var1186,2024,SULAWESI TENGAH,20.67,eligible,tersedia
+var1186,2024,SULAWESI TENGGARA,19.78,eligible,tersedia
+var1186,2024,SULAWESI UTARA,28.33,eligible,tersedia
+var1186,2024,SUMATERA BARAT,21.31,eligible,tersedia
+var1186,2024,SUMATERA SELATAN,23.36,eligible,tersedia
+var1186,2024,SUMATERA UTARA,19.78,eligible,tersedia
+var1186,2025,ACEH,24.52,eligible,tersedia
+var1186,2025,BALI,5.33,eligible,tersedia
+var1186,2025,BANTEN,23.72,eligible,tersedia
+var1186,2025,BENGKULU,18.61,eligible,tersedia
+var1186,2025,DI YOGYAKARTA,11.25,eligible,tersedia
+var1186,2025,DKI JAKARTA,12.83,eligible,tersedia
+var1186,2025,GORONTALO,23.9,eligible,tersedia
+var1186,2025,JAMBI,19.46,eligible,tersedia
+var1186,2025,JAWA BARAT,24.84,eligible,tersedia
+var1186,2025,JAWA TENGAH,16.67,eligible,tersedia
+var1186,2025,JAWA TIMUR,16.76,eligible,tersedia
+var1186,2025,KALIMANTAN BARAT,19.63,eligible,tersedia
+var1186,2025,KALIMANTAN SELATAN,18.59,eligible,tersedia
+var1186,2025,KALIMANTAN TENGAH,21.72,eligible,tersedia
+var1186,2025,KALIMANTAN TIMUR,18.29,eligible,tersedia
+var1186,2025,KALIMANTAN UTARA,18.88,eligible,tersedia
+var1186,2025,KEP. BANGKA BELITUNG,18.16,eligible,tersedia
+var1186,2025,KEP. RIAU,16.16,eligible,tersedia
+var1186,2025,LAMPUNG,18.07,eligible,tersedia
+var1186,2025,MALUKU,28.49,eligible,tersedia
+var1186,2025,MALUKU UTARA,25.65,eligible,tersedia
+var1186,2025,NUSA TENGGARA BARAT,16.37,eligible,tersedia
+var1186,2025,NUSA TENGGARA TIMUR,17.62,eligible,tersedia
+var1186,2025,PAPUA,26.34,eligible,tersedia
+var1186,2025,PAPUA BARAT,24.64,eligible,tersedia
+var1186,2025,PAPUA BARAT DAYA,24.97,eligible,tersedia
+var1186,2025,PAPUA PEGUNUNGAN,11.62,eligible,tersedia
+var1186,2025,PAPUA SELATAN,21.95,eligible,tersedia
+var1186,2025,PAPUA TENGAH,21.18,eligible,tersedia
+var1186,2025,RIAU,19.49,eligible,tersedia
+var1186,2025,SULAWESI BARAT,18.97,eligible,tersedia
+var1186,2025,SULAWESI SELATAN,19.2,eligible,tersedia
+var1186,2025,SULAWESI TENGAH,20.14,eligible,tersedia
+var1186,2025,SULAWESI TENGGARA,19.84,eligible,tersedia
+var1186,2025,SULAWESI UTARA,29.52,eligible,tersedia
+var1186,2025,SUMATERA BARAT,18.42,eligible,tersedia
+var1186,2025,SUMATERA SELATAN,21.35,eligible,tersedia
+var1186,2025,SUMATERA UTARA,17.42,eligible,tersedia
