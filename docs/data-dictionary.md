@@ -96,3 +96,18 @@ Angka pada tabel ini merupakan hasil pemeriksaan ketika laporan dibuat. Jalankan
 
 Skrip `buat_grid_panel.py` membentuk kedua grid panel dan ringkasan kelengkapan berdasarkan berkas sumber di `data/raw/bps/2026-10-17/`. Skrip memeriksa bahwa daftar acuan berisi 38 provinsi dan menggunakan validasi satu-ke-satu pada penggabungan data sumber ke grid.
 
+## Metadata seri: satuan, periode, kelompok umur, kode SDG
+
+| Seri | Satuan | Periode | Kelompok umur | Kode SDG | Bukti |
+|---|---|---|---|---|---|
+| var1186 | persen | tahun | 15-24 | 8.6.1 | judul tabel BPS (manifest_asal.json) |
+| var2658 | persen | tahun | 5-17 | 8.7.1 | judul tabel BPS (manifest_asal.json) |
+| SDG_0861_SEX_RT | persen | tahun | 15-24 | 8.6.1 | DSD ILO; OBS_STATUS=B (patahan seri) |
+| SDG_A871_SEX_AGE_RT | persen | tahun | 15-17 | 8.7.1 | DSD ILO (aktivitas ekonomi) |
+| SDG_B871_SEX_AGE_RT | persen | tahun | 15-17 | 8.7.1 | DSD ILO (aktivitas ekonomi + pekerjaan rumah tangga) |
+| SL.UEM.NEET.ZS | persen | tahun | 15-24 | - | metadata WDI |
+| SL.TLF.0714.ZS | persen | tahun | 7-14 | - | metadata WDI |
+
+Catatan: kelompok umur berbeda antar sumber, sehingga pasangan rekonsiliasi pekerja anak
+dikategorikan "definisi", bukan selisih biasa.
+
