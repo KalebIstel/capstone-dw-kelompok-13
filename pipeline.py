@@ -6,8 +6,13 @@
 Urutan tahap tidak diubah; isi tiap tahap di src/<tahap>/. Tahap 7 (skala, arsip WDI) ditulis
 sebagai skrip terpisah di src/skala/ karena memakai unduhan tambahan.
 """
+from pathlib import Path
 import sys
 import time
+
+_venv_lib = Path(__file__).resolve().parent / ".venv" / "Lib" / "site-packages"
+if _venv_lib.exists() and str(_venv_lib) not in sys.path:
+    sys.path.insert(0, str(_venv_lib))
 
 from src import ekstraksi, gold, silver, validasi
 from src.common.manifest import periksa
