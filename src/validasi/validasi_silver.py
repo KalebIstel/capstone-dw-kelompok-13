@@ -1,6 +1,12 @@
 """Aturan validasi dasar tabel Silver menggunakan Pandera (Kasus 13)."""
 
 from pathlib import Path
+import sys
+
+_venv_lib = Path(__file__).resolve().parents[2] / ".venv" / "Lib" / "site-packages"
+if _venv_lib.exists() and str(_venv_lib) not in sys.path:
+    sys.path.insert(0, str(_venv_lib))
+
 import pandas as pd
 import pandera.pandas as pa
 from pandera.pandas import Check, Column, DataFrameSchema
