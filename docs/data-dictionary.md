@@ -21,6 +21,13 @@ Total baris: 1.325 baris | Kunci komposit: `[sumber, seri_kode, wilayah_kode, pe
 | `_berkas_raw` | string (object) | path relatif | tidak | 8 berkas nilai di `data/raw/` | Lineage berkas mentah | Jalur relatif berkas sumber terhadap `data/raw/` |
 | `_sha256_raw` | string (object) | heksadesimal 64-karakter | tidak | 8 sidik SHA-256 yang sah di `MANIFEST.csv` | `src.common.manifest.sha256_raw` | Sidik integritas berkas mentah asal observasi |
 
+### Contoh penelusuran lineage baris Silver ke berkas mentah
+
+Setiap baris pada data/silver/silver.parquet dapat ditelusuri kembali ke berkas mentah dan diverifikasi integritasnya lewat _berkas_raw dan _sha256_raw terhadap data/raw/MANIFEST.csv:
+
+1. **Baris contoh data/silver/silver.parquet (indeks 0):** sumber=bps, seri_kode=var1186, wilayah_kode=1100 (ACEH), periode=2015 (tahun), rincian=total, nilai=25.65 (persen), _berkas_raw=bps/2026-10-17/sdg8_neet.csv, _sha256_raw=b35a8ea5b7d3e043f8f0ccd5afbbd8ed9276397f068efc8fe72fea360d72e4d5.
+2. **Verifikasi berkas mentah:** Berkas berada di data/raw/bps/2026-10-17/sdg8_neet.csv dengan entri MANIFEST.csv (bait=25558, sha256=b35a8ea5b7d3e043f8f0ccd5afbbd8ed9276397f068efc8fe72fea360d72e4d5). Pemetaan wilayah ACEH -> 1100 mengikuti K-001, satuan persen mengikuti K-003, dan rincian=total mengikuti K-004.
+
 ## data/gold/<tabel>.parquet
 
 *(Akan dilengkapi pada Sprint 2 setelah panel Gold dan tabel rekonsiliasi terbentuk)*
