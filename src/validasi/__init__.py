@@ -1,10 +1,12 @@
-"""Tahap 8 — Validasi dan dokumentasi (pertemuan XIV–XV). Milik tim.
+"""Tahap 8 — Validasi dan dokumentasi (dimulai sejak Sprint 1).
 
-Tulis skema validasi Silver dan Gold (pandera atau Great Expectations): rentang nilai per satuan,
-kelengkapan wilayah, keunikan kunci, konsistensi provinsi vs nasional bila relevan. Laporan
-validasi ditulis ke reports/validasi.md. Data dictionary di docs/data-dictionary.md.
+Skema validasi dasar Silver menggunakan Pandera dijalankan otomatis oleh pipeline.py.
+Validasi Gold akan ditambahkan pada Sprint 2-3 setelah tabel Gold terbentuk.
 """
 
+from src.validasi.validasi_silver import validasi_silver
 
-def jalankan(silver, gold):
-    raise NotImplementedError("Tahap 8: skema pandera/GE untuk Silver dan Gold")
+
+def jalankan(silver=None, gold=None):
+    hasil_silver = validasi_silver(silver)
+    return {"silver": hasil_silver}
