@@ -54,7 +54,28 @@ Total baris: 646 sel (`418` sel `var1186` 2015–2025 + `228` sel `var2658` 2020
 
 ## data/gold/tabel_nasional.parquet
 
-Total baris: 30 periode (`1996`–`2025`) $\times$ 14 kolom (`periode` + 13 seri/rincian nasional BPS, ILOSTAT, dan WDI) | Kunci unik: `[periode]` | Keluaran `src/gold/tabel_nasional.py` yang memakai `pilih_snapshot` dan `tangani_periode_subtahunan`. Kedua definisi pekerja anak ILO (`SDG_A871_SEX_AGE_RT` dan `SDG_B871_SEX_AGE_RT`) disimpan sebagai kolom/seri terpisah.
+Total baris: 76 baris teramati (30 periode `1996`–`2025` $\times$ 7 seri Kasus 13) | Kunci unik: `[periode, seri_kode]` | Keluaran `src/gold/tabel_nasional.py` via `pipeline.py`. Menyandingkan seri utama BPS (`var1186`, `var2658`) dengan seri pembanding ILOSTAT (`SDG_0861_SEX_RT`, `SDG_A871_SEX_AGE_RT`, `SDG_B871_SEX_AGE_RT`) dan WDI (`SL.UEM.NEET.ZS`, `SL.TLF.0714.ZS`) dengan kedua definisi pekerja anak ILO tetap dipisah, dilengkapi asal angka (`asal_angka`) serta lineage `_berkas_raw` dan `_sha256_raw` di setiap baris.
+
+| Kolom | Tipe | Satuan/format | Boleh kosong | Rentang atau nilai sah | Asal (berkas/aturan) | Keterangan |
+|---|---|---|---|---|---|---|
+| `periode` | string (object) | YYYY (`^\d{4}$`) | tidak | `1996` s.d. `2025` (30 tahun) | K-018, `tangani_periode_subtahunan` | Tahun pengamatan nasional |
+| `seri_kode` | string (object) | — | tidak | 7 seri Kasus 13 (`var1186`, `var2658`, `SDG_0861_SEX_RT`, `SDG_A871_SEX_AGE_RT`, `SDG_B871_SEX_AGE_RT`, `SL.UEM.NEET.ZS`, `SL.TLF.0714.ZS`) | `METADATA_SERI_NASIONAL` | Kode seri indikator |
+| `topik` | string (object) | kategori | tidak | `neet`, `pekerja_anak` | `METADATA_SERI_NASIONAL` | Pengelompokan topik untuk penyandingan seri utama vs pembanding |
+| `indikator` | string (object) | kategori | tidak | `neet_15_24`, `pekerja_anak_5_17`, `pekerja_anak_15_17`, `pekerja_anak_7_14` | `METADATA_SERI_NASIONAL` | Label analitis indikator beserta cakupan umur |
+| `peran_seri` | string (object) | kategori | tidak | `utama` (17 baris), `pembanding` (59 baris) | `METADATA_SERI_NASIONAL` | Peran seri dalam rekonsiliasi Tahap 6 |
+| `asal_angka` | string (object) | kategori | tidak | `baris_indonesia` (17 baris), `pembanding` (59 baris); mendukung `agregat_provinsi` | K-023 | Asal angka nasional per baris; seri utama Kasus 13 memakai baris Indonesia eksplisit (`9999`) |
+| `sumber` | string (object) | — | tidak | `bps`, `ilostat`, `wdi` | Silver (`wilayah_kode=9999`) | Produsen data sumber |
+| `wilayah_kode` | int64 | kode nasional | tidak | `9999` | K-001 | Kode wilayah nasional Indonesia |
+| `nama_wilayah` | string (object) | — | tidak | `INDONESIA` | Silver (`wilayah_kode=9999`) | Nama wilayah nasional |
+| `rincian` | string (object) | kategori | tidak | `total` (`var1186`, `var2658`, `SDG_0861_SEX_RT`, `SL.UEM.NEET.ZS`, `SL.TLF.0714.ZS`), `15-17` (`SDG_A871_SEX_AGE_RT`, `SDG_B871_SEX_AGE_RT`) | K-022 | Rincian agregat nasional sebanding agar unik 1 baris per `periode x seri` |
+| `kelompok_umur` | string (object) | rentang usia | tidak | `15-24`, `5-17`, `15-17`, `7-14` | K-011, `METADATA_SERI_NASIONAL` | Cakupan kelompok umur resmi tiap seri |
+| `nilai` | float64 | persen (0–100) | tidak | `1.53` s.d. `31.86` | Silver terdeduplikasi (K-017) | Nilai observasi nasional riil |
+| `satuan` | string (object) | — | tidak | `persen` | K-003, K-021 | Satuan baku seragam |
+| `snapshot_tanggal` | string (object) | YYYY-MM-DD | tidak | `2026-10-17`, `2026-10-20` | K-017, ekstrak dari `_berkas_raw` | Tanggal snapshot berkas sumber terpilih |
+| `_berkas_raw` | string (object) | path relatif | tidak | 6 berkas nilai nasional di `data/raw/` | K-017, K-022, lineage Silver | Berkas sumber terpilih pada setiap baris |
+| `_sha256_raw` | string (object) | heksadesimal 64-karakter | tidak | 6 hash SHA-256 sah di `MANIFEST.csv` | Lineage Silver | Sidik integritas berkas mentah asal baris |
+
+*(Laporan pivot lebar `30 periode` $\times$ `14 kolom` beserta rincian gender ILOSTAT tetap dihasilkan di `reports/tabel_nasional_periode_seri.csv` untuk inspeksi manusia dan rujukan `reports/daftar_pasangan_rekonsiliasi.md`.)*
 
 ## Laporan grid panel dan kelengkapan provinsi
 
