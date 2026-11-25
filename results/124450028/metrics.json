@@ -1,6 +1,12 @@
 {
   "metrik": {
-    "berkas_mentah": 16
+    "berkas_mentah": 16,
+    "baris_silver": 1325,
+    "sel_kosong_grid": 38,
+    "outlier_ditandai": 23,
+    "patahan_ditandai": 6,
+    "seri_panel": 2,
+    "baris_gold": 646
   },
   "seed": 0,
   "data_hash": "707f6d79a36fc3823428b81ac57e4de8950943eac000bbba25bc6dc1597d1b9b",

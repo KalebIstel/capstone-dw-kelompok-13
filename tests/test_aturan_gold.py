@@ -11,10 +11,13 @@ if str(ROOT) not in sys.path:
 
 from src.gold.aturan_gold import (
     KUNCI_PANEL_GOLD,
+    KUNCI_PANEL_INDIKATOR,
     bangun_panel_gold,
     pilih_rincian_dan_cakupan,
     pilih_snapshot,
+    seragamkan_satuan_per_indikator,
     tangani_periode_subtahunan,
+    verifikasi_ketertelusuran_silver,
 )
 
 
@@ -132,6 +135,35 @@ class TestAturanGold(unittest.TestCase):
         anom_counts = panel["penanda_anomali"].value_counts(dropna=True).to_dict()
         self.assertEqual(anom_counts["outlier_asli"], 23)
         self.assertEqual(anom_counts["patahan_diduga"], 6)
+
+    def test_seragamkan_satuan_dan_tolak_satuan_campur(self):
+        df_valid = pd.DataFrame([
+            _buat_baris(seri_kode="var1186", satuan="Persen"),
+            _buat_baris(seri_kode="var2658", satuan="PT"),
+        ])
+        hasil = seragamkan_satuan_per_indikator(df_valid)
+        self.assertEqual(set(hasil["satuan"]), {"persen"})
+
+        df_campur = pd.DataFrame([
+            _buat_baris(seri_kode="var1186", satuan="persen"),
+            _buat_baris(seri_kode="var2658", satuan="orang"),
+        ])
+        with self.assertRaises(ValueError):
+            seragamkan_satuan_per_indikator(df_campur)
+
+    def test_ketertelusuran_dan_kunci_indikator_panel(self):
+        silver_path = ROOT / "data/silver/silver.parquet"
+        if not silver_path.exists():
+            self.skipTest("data/silver/silver.parquet belum tersedia")
+
+        df_silver = pd.read_parquet(silver_path)
+        panel, ringkasan = bangun_panel_gold(df_silver=df_silver, simpan=False)
+        self.assertEqual(int(panel.duplicated(KUNCI_PANEL_INDIKATOR).sum()), 0)
+        self.assertEqual(ringkasan["ketertelusuran"]["sel_terisi"], 588)
+        self.assertEqual(ringkasan["ketertelusuran"]["sel_tertelusur"], 588)
+
+        jejak = verifikasi_ketertelusuran_silver(panel, df_silver)
+        self.assertEqual(jejak["sel_kosong"], 58)
 
 
 if __name__ == "__main__":
