@@ -13,12 +13,14 @@ def jalankan(silver=None):
     snap = ringkasan["snapshot"]
     per = ringkasan["periode"]
     cak = ringkasan["cakupan"]
+    jejak = ringkasan["ketertelusuran"]
     anom = ringkasan["panel"]["penanda_anomali"]
     print(
         f"Panel Gold tersimpan di data/gold/panel.parquet ({ringkasan['panel']['total_sel']} sel) | "
         f"Silver tidak terpilih -> snapshot: {snap['baris_tidak_terpilih']}, "
         f"sub-tahunan: {per['baris_tidak_terpilih']}, "
         f"nasional/rincian non-panel: {cak['baris_tidak_masuk_panel']} | "
+        f"tertelusur Silver: {jejak['sel_tertelusur']}/{jejak['sel_terisi']} | "
         f"penanda anomali: {anom.get('outlier_asli', 0)} outlier_asli, {anom.get('patahan_diduga', 0)} patahan_diduga"
     )
     tabel_nasional = simpan_tabel_nasional(df_silver=silver)

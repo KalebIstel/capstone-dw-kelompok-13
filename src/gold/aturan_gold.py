@@ -33,9 +33,25 @@ WILAYAH_DOB_PAPUA = {9200, 9500, 9600, 9700}
 
 KUNCI_OBSERVASI = ["sumber", "seri_kode", "wilayah_kode", "periode", "rincian"]
 KUNCI_PANEL_GOLD = ["wilayah_kode", "periode", "seri_kode"]
+KUNCI_PANEL_INDIKATOR = ["nama_wilayah", "periode", "indikator"]
 
 PRIORITAS_FORMAT = {"csv": 0, "json": 1}
 PRIORITAS_JENIS_PERIODE = {"tahun": 0, "semester": 1, "triwulan": 2, "bulan": 3}
+
+SATUAN_BAKU_MAP = {
+    "persen": "persen",
+    "%": "persen",
+    "pt": "persen",
+    "per 1.000": "per 1.000",
+    "per 1000": "per 1.000",
+    "per_1000": "per 1.000",
+    "rupiah": "rupiah",
+    "rp": "rupiah",
+    "idr": "rupiah",
+    "orang": "orang",
+    "jiwa": "orang",
+}
+SATUAN_BAKU_SAH = {"persen", "per 1.000", "rupiah", "orang"}
 
 KOLOM_PANEL_GOLD = [
     "seri_kode",
@@ -362,6 +378,77 @@ def sematkan_penanda_anomali(
     return hasil[KOLOM_PANEL_GOLD]
 
 
+def seragamkan_satuan_per_indikator(df: pd.DataFrame) -> pd.DataFrame:
+    """Seragamkan satuan per indikator ke label baku dan tolak satuan campur dalam satu kolom nilai."""
+    if df.empty:
+        return df.copy()
+
+    hasil = df.copy()
+    satuan_normal = hasil["satuan"].astype(str).str.strip().str.lower().map(
+        lambda s: SATUAN_BAKU_MAP.get(s, s)
+    )
+    tak_baku = set(satuan_normal) - SATUAN_BAKU_SAH
+    if tak_baku:
+        raise ValueError(f"Ditemukan satuan di luar daftar baku {sorted(SATUAN_BAKU_SAH)}: {sorted(tak_baku)}")
+
+    hasil["satuan"] = satuan_normal
+
+    satuan_per_seri = hasil.groupby("seri_kode")["satuan"].nunique()
+    seri_ganda = satuan_per_seri[satuan_per_seri > 1]
+    if not seri_ganda.empty:
+        raise ValueError(f"Seri memiliki satuan ganda: {seri_ganda.to_dict()}")
+
+    if hasil["satuan"].nunique() > 1:
+        raise ValueError(
+            "Kolom nilai panel tidak boleh mencampur satuan berbeda: "
+            f"{sorted(hasil['satuan'].unique())}"
+        )
+    return hasil
+
+
+def verifikasi_ketertelusuran_silver(panel: pd.DataFrame, df_silver: pd.DataFrame) -> dict:
+    """Pastikan kunci panel unik dan seluruh sel terisi Gold tertelusur 1-ke-1 ke baris Silver asalnya."""
+    duplikat_kode = int(panel.duplicated(KUNCI_PANEL_GOLD).sum())
+    if duplikat_kode:
+        raise AssertionError(f"Panel Gold melanggar keunikan kunci {KUNCI_PANEL_GOLD}: {duplikat_kode} duplikat")
+
+    duplikat_indikator = int(panel.duplicated(KUNCI_PANEL_INDIKATOR).sum())
+    if duplikat_indikator:
+        raise AssertionError(
+            f"Panel Gold melanggar keunikan kunci {KUNCI_PANEL_INDIKATOR}: {duplikat_indikator} duplikat"
+        )
+
+    terisi = panel[panel["status_data"] == "tersedia"].copy()
+    kunci_silver = ["sumber", "seri_kode", "wilayah_kode", "periode", "rincian", "_berkas_raw"]
+    silver_ref = df_silver[kunci_silver + ["nilai", "_sha256_raw"]].copy()
+
+    jejak = terisi.merge(
+        silver_ref,
+        on=kunci_silver,
+        how="left",
+        validate="one_to_one",
+        suffixes=("", "_silver"),
+    )
+
+    tidak_ditemukan = int(jejak["nilai_silver"].isna().sum())
+    if tidak_ditemukan:
+        raise AssertionError(f"{tidak_ditemukan} sel Gold tidak tertelusur ke baris Silver asalnya")
+
+    selisih_nilai = int(((jejak["nilai"] - jejak["nilai_silver"]).abs() > 1e-12).sum())
+    if selisih_nilai:
+        raise AssertionError(f"{selisih_nilai} sel Gold memiliki nilai berbeda dari baris Silver asalnya")
+
+    beda_sha = int((jejak["_sha256_raw"] != jejak["_sha256_raw_silver"]).sum())
+    if beda_sha:
+        raise AssertionError(f"{beda_sha} sel Gold memiliki _sha256_raw berbeda dari baris Silver asalnya")
+
+    return {
+        "sel_terisi": int(len(terisi)),
+        "sel_tertelusur": int(len(jejak)),
+        "sel_kosong": int(len(panel) - len(terisi)),
+    }
+
+
 def bangun_panel_gold(
     df_silver: pd.DataFrame | None = None,
     silver_path: Path = SILVER_PATH,
@@ -379,6 +466,7 @@ def bangun_panel_gold(
     df_snap, ringkasan_snap = pilih_snapshot(df_silver)
     df_tahunan, ringkasan_periode = tangani_periode_subtahunan(df_snap)
     df_provinsi, _, ringkasan_cakupan = pilih_rincian_dan_cakupan(df_tahunan)
+    df_provinsi = seragamkan_satuan_per_indikator(df_provinsi)
 
     panel = bangun_grid_panel(df_provinsi)
     panel = sematkan_penanda_anomali(
@@ -387,9 +475,7 @@ def bangun_panel_gold(
         tahun_serentak_path=tahun_serentak_path,
     )
 
-    duplikat_akhir = int(panel.duplicated(KUNCI_PANEL_GOLD).sum())
-    if duplikat_akhir:
-        raise AssertionError(f"Panel Gold melanggar keunikan kunci {KUNCI_PANEL_GOLD}: {duplikat_akhir} duplikat")
+    ringkasan_jejak = verifikasi_ketertelusuran_silver(panel, df_silver)
 
     if simpan:
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -399,6 +485,7 @@ def bangun_panel_gold(
         "snapshot": ringkasan_snap,
         "periode": ringkasan_periode,
         "cakupan": ringkasan_cakupan,
+        "ketertelusuran": ringkasan_jejak,
         "panel": {
             "total_sel": int(len(panel)),
             "status_data": panel["status_data"].value_counts().to_dict(),
