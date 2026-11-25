@@ -7,3 +7,4 @@ melainkan "mengerti atau tidak" — isi kolom terakhir dengan apa yang Anda ubah
 | Tanggal | Siapa (NIM) | Alat | Untuk apa | Apa yang diubah dari keluarannya |
 |---|---|---|---|---|
 | 2026-11-19 | 124450053 | Gemini | Penyusunan modul transformasi Silver (Tahap 4) | Menyesuaikan logika pemetaan rincian ILOSTAT (SEX_T dan kelompok umur 15-17), memvalidasi filter nilai null WDI, dan memeriksa kepatuhan skema terhadap src.common.skema |
+| 2026-11-25 | 124450028 | Gemini | Penyusunan modul aturan satu nilai per sel Gold (`src/gold/aturan_gold.py`) dan uji unit | Menetapkan prioritas format CSV pada tanggal snapshot sama, aturan periode sub-tahunan berbasis periode akhir tanpa rata-rata sintetis, serta memverifikasi pewarisan penuh 29 penanda anomali Sprint 1 ke `data/gold/panel.parquet` |
