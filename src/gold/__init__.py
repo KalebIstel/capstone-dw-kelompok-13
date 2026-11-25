@@ -3,11 +3,24 @@
 Keluaran: data/gold/*.parquet (panel provinsi x tahun x indikator siap analisis, plus tabel
 rekonsiliasi dengan pembanding nasional) dan basis data SQL (mis. data/gold/gold.sqlite).
 """
+from src.gold.aturan_gold import bangun_panel_gold
 from src.gold.tabel_nasional import simpan_tabel_nasional
 
 
 def jalankan(silver=None):
-    """Terima Silver, tulis tabel Gold (Sprint 1: tabel nasional seri utama & pembanding), kembalikan {nama_tabel: DataFrame}."""
-    tabel_nasional = simpan_tabel_nasional()
-    return {"tabel_nasional": tabel_nasional}
+    """Terima Silver, terapkan aturan Gold, tulis panel & tabel nasional, kembalikan {nama_tabel: DataFrame}."""
+    panel, ringkasan = bangun_panel_gold(silver)
+    snap = ringkasan["snapshot"]
+    per = ringkasan["periode"]
+    cak = ringkasan["cakupan"]
+    anom = ringkasan["panel"]["penanda_anomali"]
+    print(
+        f"Panel Gold tersimpan di data/gold/panel.parquet ({ringkasan['panel']['total_sel']} sel) | "
+        f"Silver tidak terpilih -> snapshot: {snap['baris_tidak_terpilih']}, "
+        f"sub-tahunan: {per['baris_tidak_terpilih']}, "
+        f"nasional/rincian non-panel: {cak['baris_tidak_masuk_panel']} | "
+        f"penanda anomali: {anom.get('outlier_asli', 0)} outlier_asli, {anom.get('patahan_diduga', 0)} patahan_diduga"
+    )
+    tabel_nasional = simpan_tabel_nasional(df_silver=silver)
+    return {"panel": panel, "tabel_nasional": tabel_nasional}
 

@@ -2,25 +2,30 @@
 from pathlib import Path
 import pandas as pd
 
+from src.gold.aturan_gold import pilih_snapshot, tangani_periode_subtahunan
+
 ROOT = Path(__file__).resolve().parents[2]
 SILVER_PATH = ROOT / "data/silver/silver.parquet"
 OUTPUT_CSV = ROOT / "reports/tabel_nasional_periode_seri.csv"
 OUTPUT_PARQUET = ROOT / "data/gold/tabel_nasional.parquet"
 
 
-def buat_tabel_nasional(silver_path: Path = SILVER_PATH) -> pd.DataFrame:
-    """Ekstrak observasi nasional (wilayah_kode: 9999) dan bentuk pivot periode x seri."""
-    if not silver_path.exists():
-        raise FileNotFoundError(f"Berkas Silver tidak ditemukan: {silver_path}")
-    
-    df = pd.read_parquet(silver_path)
-    
-    # Saring hanya observasi nasional
+def buat_tabel_nasional(
+    silver_path: Path = SILVER_PATH,
+    df_silver: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    """Ekstrak observasi nasional (wilayah_kode: 9999) dengan aturan Gold dan bentuk pivot periode x seri."""
+    if df_silver is None:
+        if not silver_path.exists():
+            raise FileNotFoundError(f"Berkas Silver tidak ditemukan: {silver_path}")
+        df = pd.read_parquet(silver_path)
+    else:
+        df = df_silver
+
+    # Saring hanya observasi nasional lalu terapkan aturan snapshot dan periode Gold
     nasional = df[df["wilayah_kode"] == 9999].copy()
-    
-    # Deduplikasi sumber ganda BPS (CSV dan JSON WebAPI nilainya identik)
-    # Ambil 1 representasi per kombinasi seri_kode, periode, dan rincian
-    nas_dedup = nasional.drop_duplicates(subset=["seri_kode", "periode", "rincian"]).copy()
+    nas_snap, _ = pilih_snapshot(nasional)
+    nas_dedup, _ = tangani_periode_subtahunan(nas_snap)
     
     # Bentuk label kolom yang informatif: nama seri + rincian
     def label_kolom(row):
@@ -46,12 +51,12 @@ def buat_tabel_nasional(silver_path: Path = SILVER_PATH) -> pd.DataFrame:
     return pivot
 
 
-def simpan_tabel_nasional():
+def simpan_tabel_nasional(df_silver: pd.DataFrame | None = None):
     """Bentuk dan simpan tabel nasional ke CSV dan Parquet."""
     OUTPUT_CSV.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PARQUET.parent.mkdir(parents=True, exist_ok=True)
     
-    tabel = buat_tabel_nasional()
+    tabel = buat_tabel_nasional(df_silver=df_silver)
     
     # Simpan CSV untuk laporan dan inspeksi manusia
     tabel.to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
