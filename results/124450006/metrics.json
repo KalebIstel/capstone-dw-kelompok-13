@@ -2,7 +2,10 @@
   "metrik": {
     "berkas_dibaca": 16,
     "baris_mentah": 1426,
-    "format": 3
+    "format": 3,
+    "seri_nasional": 7,
+    "periode_nasional": 30,
+    "baris_tabel_nasional": 76
   },
   "seed": 0,
   "data_hash": "707f6d79a36fc3823428b81ac57e4de8950943eac000bbba25bc6dc1597d1b9b",
