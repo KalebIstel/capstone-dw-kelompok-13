@@ -15,3 +15,17 @@
 5. **Integritas wilayah & lineage:** `wilayah_kode` hanya berisi kode 38 provinsi BPS (`1100`–`9700`) atau `9999` (Indonesia), dan setiap baris memiliki `_berkas_raw` serta `_sha256_raw` (SHA-256 64 karakter heksadesimal).
 
 *(Validasi tabel Gold dan penelusuran lineage baris Gold ke `_berkas_raw` akan ditambahkan pada Sprint 2–3 setelah panel Gold terbentuk.)*
+
+## Ringkasan Validasi Gold & Rekonsiliasi (Sprint 2)
+
+- **Status:** LOLOS (4/4 aturan)
+- **Total sel panel Gold:** 646 sel (588 terisi, 58 kosong struktural)
+- **Total baris rekonsiliasi (`tabel_nasional.parquet`):** 76 baris
+- **Skrip:** `src/validasi/validasi_gold.py` (dipanggil otomatis oleh `pipeline.py` melalui `validasi.jalankan(silver, gold)`)
+
+### Daftar Aturan Gold & Rekonsiliasi yang Diuji
+
+1. **Kunci panel unik:** LOLOS — 0 duplikat pada ['seri_kode', 'wilayah_kode', 'periode', 'rincian'].
+2. **Satuan satu per indikator:** LOLOS — Setiap indikator memiliki tepat 1 satuan.
+3. **Setiap sel Gold punya pasangan di Silver:** LOLOS — 588/588 sel terisi cocok dengan Silver.
+4. **Setiap baris rekonsiliasi punya kategori:** LOLOS — 76/76 baris memiliki kategori lengkap (topik, peran_seri, asal_angka).
