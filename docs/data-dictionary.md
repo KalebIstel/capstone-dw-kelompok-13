@@ -160,3 +160,14 @@ Skrip `buat_grid_panel.py` membentuk kedua grid panel dan ringkasan kelengkapan 
 Catatan: kelompok umur berbeda antar sumber, sehingga pasangan rekonsiliasi pekerja anak
 dikategorikan "definisi", bukan selisih biasa.
 
+## Basis data relasional SQL (`data/gold/capstone.duckdb`)
+
+Dibentuk otomatis oleh `python pipeline.py` melalui `src/gold/muat_sql.py` menggunakan DDL berkunci primer di `src/gold/skema.sql` (dikecualikan dari Git lewat `*.duckdb` pada `.gitignore`, lihat keputusan `K-024` dan `reports/basis-data.md`).
+
+| Nama Tabel | Sumber Parquet | Kunci Primer (`PRIMARY KEY`) | Jumlah Baris | Keterangan |
+|---|---|---|---:|---|
+| `silver` | `data/silver/silver.parquet` | `(sumber, seri_kode, wilayah_kode, periode, rincian, _berkas_raw)` | 1.325 | Tabel panjang Silver lengkap ber-lineage |
+| `gold_panel` | `data/gold/panel.parquet` | `(wilayah_kode, periode, seri_kode)` | 646 | Panel provinsi $\times$ tahun $\times$ indikator BPS dengan status sel kosong & penanda anomali |
+| `gold_tabel_nasional` | `data/gold/tabel_nasional.parquet` | `(periode, seri_kode)` | 76 | Tabel nasional seri utama BPS vs pembanding ILO/WDI dengan `asal_angka` & lineage |
+| `gold_rekonsiliasi` | `data/gold/rekonsiliasi.parquet` | `(pasangan_id, periode, wilayah_kode)` | 0 *(siap Tahap 6)* | Skema tabel rekonsiliasi selisih seri utama vs pembanding nasional |
+

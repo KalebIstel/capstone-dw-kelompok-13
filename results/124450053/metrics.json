@@ -1,7 +1,11 @@
 {
   "metrik": {
     "pasangan_rekonsiliasi": 5,
-    "periode_beririsan": 9
+    "periode_beririsan": 9,
+    "tabel_sql": 4,
+    "baris_silver_sql": 1325,
+    "baris_panel_sql": 646,
+    "baris_nasional_sql": 76
   },
   "seed": 0,
   "data_hash": "707f6d79a36fc3823428b81ac57e4de8950943eac000bbba25bc6dc1597d1b9b",
