@@ -87,7 +87,15 @@ Pemeriksaan metadata ILOSTAT DSD dan WDI mengonfirmasi batasan komparabilitas ya
 ---
 
 ## 4. Integrasi dan Rekonsiliasi
-*(Draf awal telah disiapkan pada `reports/daftar_pasangan_rekonsiliasi.md` dan `reports/tabel_nasional_periode_seri.csv` dengan 5 pasangan teridentifikasi; analisis selisih kuantitatif penuh dan dekomposisi revisi akan dikerjakan pada Sprint 2).*
+Tahap 6 dijalankan otomatis oleh `python pipeline.py` melalui modul `src/gold/rekonsiliasi.py` yang menghasilkan `data/gold/rekonsiliasi.parquet` (**80 baris** across **5 pasangan**, terdiri dari **19 baris berpasangan** dan **61 baris tanpa pasangan** yang tetap ditampilkan dengan `selisih = NULL`), dimuat ke tabel `gold_rekonsiliasi` DuckDB, serta dirinci lengkap di `reports/rekonsiliasi.md` (keputusan `K-025`). Statistik selisih seluruh baris berpasangan mencatat **median selisih = `+0.711` poin persentase** (`selisih = nilai_utama - nilai_pembanding`, tidak dihapus dan tidak dipaksa sama):
+
+- **P1 (`var1186` vs ILO `SDG_0861_SEX_RT`, 26 baris `2000–2025`, 9 beririsan `2015–2023`):** Kelompok umur identik (**15–24**). Selisih `2015–2019` dan `2021–2023` (`-0.055` s.d. `+1.851` pp) berkategori **`metode berbeda`** karena ILOSTAT memproses ulang mikrodata Sakernas (`NOTE_SOURCE: ILO-STATISTICS - Micro data processing`) serta menandai `2021` dengan `OBS_STATUS=B` (*Break in series: Methodology revised*). Khusus **2020** (selisih ekstrem `+2.480` pp: `24.28%` vs `21.800%`) dikategorikan **`belum terjelaskan`** (*dugaan:* penyesuaian instrumen/klasifikasi pelatihan Sakernas saat awal pandemi COVID-19; *bukti dicari:* `OBS_STATUS`/`NOTE_INDICATOR` di `DF_SDG_0861_SEX_RT.csv` kosong pada 2020 dan metadata `sdg8_neet.json` BPS hanya menulis `"Sumber: Sakernas, BPS"`).
+- **P2 (`var1186` vs WDI `SL.UEM.NEET.ZS`, 30 baris `1996–2025`, 9 beririsan `2015–2023`):** Angka beririsan identik 100% dengan `SDG_0861_SEX_RT` karena WDI mengadopsi langsung basis data ILOSTAT (`sumber2_indikator.json`), sehingga mewarisi kategori **`metode berbeda`** (`2015–2019, 2021–2023`) dan **`belum terjelaskan`** (`2020`).
+- **P3 (`var2658` vs ILO `SDG_A871_SEX_AGE_RT`, 8 baris, 1 beririsan `2023`):** Pada `2023` (`1.530%` vs `1.567%`, selisih `-0.037` pp) dikategorikan **`cakupan berbeda`** karena amatan aktual ILO Indonesia di `DF_SDG_A871_SEX_AGE_RT.csv` hanya memuat kode `AGE_CLDVERSION_Y15-17` (**15–17 tahun**) sedangkan BPS mencakup **5–17 tahun** (disertai peralihan survei ILO `CLS` pada `2009` ke `LFS` pada `2019/2023`).
+- **P4 (`var2658` vs ILO `SDG_B871_SEX_AGE_RT`, 7 baris, 0 beririsan):** Periode tidak tumpang tindih (`2009` `CLS` umur 15–17 vs `2020–2025` BPS; `selisih = NULL`, status `tidak_beririsan`) dan secara metadata DSD tergolong **`definisi berbeda`** karena mencakup pekerjaan rumah tangga $\ge 21$ jam.
+- **P5 (`var2658` vs WDI `SL.TLF.0714.ZS`, 9 baris, 0 beririsan):** Seri WDI mengukur usia **7–14 tahun** dan berhenti di `2010` (`2000, 2009, 2010`), sehingga tidak beririsan periode dengan BPS `2020–2025` (`selisih = NULL`, status `tidak_beririsan`) dan memiliki **`cakupan berbeda`**.
+
+*(Analisis revisi antar-rilis arsip WDI akan dilanjutkan pada Sprint 3 di Tahap 7).*
 
 ---
 

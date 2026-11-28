@@ -89,7 +89,7 @@ class TestSqlGoldDuckDB(unittest.TestCase):
                     "nilai_utama": 22.25,
                     "nilai_pembanding": 21.569,
                     "selisih": 0.681,
-                    "kategori_selisih": "metode",
+                    "kategori_selisih": "metode berbeda",
                     "penjelasan": "Survei Sakernas BPS vs model harmonisasi ILOSTAT.",
                     "kelompok_umur_utama": "15-24",
                     "kelompok_umur_pembanding": "15-24",

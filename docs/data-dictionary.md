@@ -77,6 +77,30 @@ Total baris: 76 baris teramati (30 periode `1996`–`2025` $\times$ 7 seri Kasus
 
 *(Laporan pivot lebar `30 periode` $\times$ `14 kolom` beserta rincian gender ILOSTAT tetap dihasilkan di `reports/tabel_nasional_periode_seri.csv` untuk inspeksi manusia dan rujukan `reports/daftar_pasangan_rekonsiliasi.md`.)*
 
+## data/gold/rekonsiliasi.parquet
+
+Total baris: 80 baris (**5 pasangan** $\times$ gabungan penuh periode: **19 baris berpasangan** + **61 baris tanpa pasangan** tetap tampil) | Kunci unik: `[pasangan_id, periode, wilayah_kode]` | Keluaran `src/gold/rekonsiliasi.py` via `pipeline.py`.
+
+| Kolom | Tipe | Satuan/format | Boleh kosong | Rentang atau nilai sah | Asal (berkas/aturan) | Keterangan |
+|---|---|---|---|---|---|---|
+| `pasangan_id` | string (object) | kode pasangan | tidak | `P1` s.d. `P5` | `PASANGAN_REKONSILIASI` | Pengenal 5 pasangan seri utama vs pembanding |
+| `topik` | string (object) | kategori | tidak | `neet`, `pekerja_anak` | `METADATA_SERI_NASIONAL` | Topik indikator pasangan |
+| `wilayah_kode` | int64 | kode nasional | tidak | `9999` | K-001 | Kode wilayah nasional Indonesia |
+| `periode` | string (object) | YYYY (`^\d{4}$`) | tidak | `1996` s.d. `2025` | Outer join `periode` `tabel_nasional` | Tahun pengamatan (beririsan & tanpa pasangan) |
+| `seri_utama` | string (object) | kode seri BPS | tidak | `var1186`, `var2658` | K-025 | Kode seri utama nasional |
+| `seri_pembanding` | string (object) | kode seri global | tidak | `SDG_0861_SEX_RT`, `SL.UEM.NEET.ZS`, `SDG_A871_SEX_AGE_RT`, `SDG_B871_SEX_AGE_RT`, `SL.TLF.0714.ZS` | K-025 | Kode seri pembanding ILOSTAT / WDI |
+| `nilai_utama` | float64 | persen (0–100) | ya (bila tanpa pasangan utama) | `1.53` s.d. `24.77` | `tabel_nasional.parquet` | Nilai seri utama BPS |
+| `nilai_pembanding` | float64 | persen (0–100) | ya (bila tanpa pasangan pembanding) | `1.567` s.d. `31.86` | `tabel_nasional.parquet` | Nilai seri pembanding ILOSTAT / WDI |
+| `selisih` | float64 | poin persentase | ya (bila tanpa pasangan) | `-0.055` s.d. `+2.480` (median `+0.711`) | `nilai_utama - nilai_pembanding` | Selisih tanpa dihapus/dipaksa sama |
+| `kategori_selisih` | string (object) | kategori | tidak | `metode berbeda`, `cakupan berbeda`, `belum terjelaskan`, `definisi berbeda`, `vintage berbeda`, `tidak_beririsan` | K-025, `src/gold/rekonsiliasi.py` | Kategori penjelasan selisih atau status tanpa irisan |
+| `penjelasan` | string (object) | teks | tidak | Penjelasan bukti metadata, dugaan, dan ketiadaan irisan | Audit raw BPS/ILO/WDI | Bukti empiris DSD, `SOURCE`, `OBS_STATUS`, & metadata |
+| `kelompok_umur_utama` | string (object) | rentang usia | tidak | `15-24`, `5-17` | K-011 | Cakupan umur seri utama |
+| `kelompok_umur_pembanding` | string (object) | rentang usia | tidak | `15-24`, `15-17`, `7-14` | K-011, audit empiris `AGE` | Cakupan umur aktual seri pembanding |
+| `_berkas_raw_utama` | string (object) | path relatif | ya (bila tanpa nilai utama) | Berkas CSV BPS di `data/raw/` | Lineage `tabel_nasional` | Sumber berkas mentah seri utama |
+| `_berkas_raw_pembanding` | string (object) | path relatif | ya (bila tanpa nilai pembanding) | Berkas ILOSTAT/WDI di `data/raw/` | Lineage `tabel_nasional` | Sumber berkas mentah seri pembanding |
+| `_sha256_raw_utama` | string (object) | heksadesimal 64-karakter | ya (bila tanpa nilai utama) | Hash SHA-256 `MANIFEST.csv` | Lineage `tabel_nasional` | Sidik integritas sumber utama |
+| `_sha256_raw_pembanding` | string (object) | heksadesimal 64-karakter | ya (bila tanpa nilai pembanding) | Hash SHA-256 `MANIFEST.csv` | Lineage `tabel_nasional` | Sidik integritas sumber pembanding |
+
 ## Laporan grid panel dan kelengkapan provinsi
 
 Bagian ini mendokumentasikan laporan analisis panel untuk dua seri BPS pada kasus 13. Laporan disimpan sebagai CSV di folder `reports/`, bukan sebagai tabel Gold.
@@ -169,5 +193,5 @@ Dibentuk otomatis oleh `python pipeline.py` melalui `src/gold/muat_sql.py` mengg
 | `silver` | `data/silver/silver.parquet` | `(sumber, seri_kode, wilayah_kode, periode, rincian, _berkas_raw)` | 1.325 | Tabel panjang Silver lengkap ber-lineage |
 | `gold_panel` | `data/gold/panel.parquet` | `(wilayah_kode, periode, seri_kode)` | 646 | Panel provinsi $\times$ tahun $\times$ indikator BPS dengan status sel kosong & penanda anomali |
 | `gold_tabel_nasional` | `data/gold/tabel_nasional.parquet` | `(periode, seri_kode)` | 76 | Tabel nasional seri utama BPS vs pembanding ILO/WDI dengan `asal_angka` & lineage |
-| `gold_rekonsiliasi` | `data/gold/rekonsiliasi.parquet` | `(pasangan_id, periode, wilayah_kode)` | 0 *(siap Tahap 6)* | Skema tabel rekonsiliasi selisih seri utama vs pembanding nasional |
+| `gold_rekonsiliasi` | `data/gold/rekonsiliasi.parquet` | `(pasangan_id, periode, wilayah_kode)` | 80 | Tabel rekonsiliasi 5 pasangan seri utama vs pembanding nasional & kategori selisih |
 
