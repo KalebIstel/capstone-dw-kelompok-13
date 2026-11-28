@@ -11,6 +11,12 @@ Berkas basis data (*.duckdb) tidak di-commit dan dibangun ulang otomatis oleh pi
 from __future__ import annotations
 
 from pathlib import Path
+import sys
+
+_venv_lib = Path(__file__).resolve().parents[2] / ".venv" / "Lib" / "site-packages"
+if _venv_lib.exists() and str(_venv_lib) not in sys.path:
+    sys.path.insert(0, str(_venv_lib))
+
 import duckdb
 import pandas as pd
 
