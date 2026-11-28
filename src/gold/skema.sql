@@ -119,8 +119,8 @@ CREATE TABLE IF NOT EXISTS gold_rekonsiliasi (
     CHECK (nilai_utama IS NULL OR (nilai_utama >= 0.0 AND nilai_utama <= 100.0)),
     CHECK (nilai_pembanding IS NULL OR (nilai_pembanding >= 0.0 AND nilai_pembanding <= 100.0)),
     CHECK (kategori_selisih IN (
-        'definisi', 'metode', 'vintage', 'cakupan',
-        'identik', 'belum terjelaskan', 'tidak_beririsan'
+        'definisi berbeda', 'metode berbeda', 'vintage berbeda',
+        'cakupan berbeda', 'belum terjelaskan', 'tidak_beririsan'
     ))
 );
 
